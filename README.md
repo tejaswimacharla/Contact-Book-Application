@@ -1,5 +1,5 @@
 # Contact Book Application
- A full-stack web application to manage Contacts and Address book
+ A full-stack web application to manage Contacts and Address book. Please view Quick Start user guide.pdf and design document.pdf for more Information
  
 1. The Contact List Application project works with a web based GUI interface.
 
