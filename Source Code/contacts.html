@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>ContactListApplication</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" src="mystyle.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="contacts.js"></script>
+      <style>
+         /* Remove the navbar's default margin-bottom and rounded borders */ 
+         .navbar {
+         margin-bottom: 0;
+         border-radius: 0;
+         background-color: #cbe1e1;
+		 border-color: #cbe1e1;
+		 color: black;
+         }
+		 .container-fluid {
+		 margin-top: -5px;
+         margin-bottom: 25px;
+		 }
+		 .h1 {
+		 margin-top: -5px;
+		 }
+         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+         .row.content {height: 450px}
+         /* Set gray background color and 100% height */
+         .sidenav {
+         padding-top: 20px;
+         background-color: #f1f1f1;
+         height: 100vh;
+         }
+		 /* Container needed to position the button. Adjust the width as needed */
+		.container {
+		  position: relative;
+		  width: 125%;
+          margin-left: -25px;
+		}
+
+		/* Make the image responsive */
+		.container img {
+		  width: 120%;
+		  height: auto;
+          margin-left: -25px;
+		}
+
+		/* Style the button and place it in the middle of the container/image */
+		.container .btn {
+		  position: absolute;
+		  top: 70%;
+		  left: 45%;
+		  transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  background-color: #00C9E0;
+		  color: black;
+		  font-size: 16px;
+		  padding: 8px 8px;
+		  border: none;
+		  cursor: pointer;
+		  border-radius: 5px;
+		}
+
+		.container .btn:hover {
+		  background-color: #5DECCE;
+		}
+         /* Set blue background color, white text and some padding */
+         footer {
+         background-color: #555;
+         color: white;
+         padding: 15px;
+         }
+         /*#contactsdiv{
+         height: auto;
+         padding: 20px;
+         margin-left: 10px;
+         margin-right: 10px;
+         padding-bottom: 10px;
+         overflow: auto;
+         }
+         #detailsdiv{
+         overflow: hidden;
+         }*/
+         /* On small screens, set height to 'auto' for sidenav and grid */
+         @media screen and (max-width: 767px) {
+         .sidenav {
+         height: auto;
+         padding: 15px;
+         }
+         .row.content {height:auto;} 
+         }
+      </style>
+   </head>
+   <body>
+      <nav class="navbar navbar-inverse">
+         <div class="container-fluid">
+            <div class="navbar-header" style="margin-left: 35%; margin-top: -5px">
+			<a class="navbar-brand" href="contacts.html"><h1>Contact List Application</h1></a>
+            
+			</div>
+               <ul class="nav navbar-nav" style="float: right">
+                  <li class="active"><a href="contacts.html">Home Page</a></li>
+               </ul>
+         </div>
+		 
+      </nav>
+      <div class="col-sm-2 sidenav" style="background-color: #cbe1e1;">
+	  <div class="container">
+		  <th><img src="images/contact_book.png" alt="contact img" width="100%" height="60%"></th>
+		  <button type="button" class="btn" id="addbtn"><b>Add New Contact<b></button>
+		</div>
+ </div>
+      <div class="container-fluid text-center col-sm-4" style="height: 100vh; overflow-y: scroll;">
+         <div class="row content">
+            <div role="alert" id="message"></div>
+            <div class="col-sm-12 text-left" id="contactsdiv">
+               <h1>Contacts List</h1>
+               <hr>
+               <form id="searchform" style="margin-top:10px;">
+                  <input type="text" class="form-control" id="searchtext" placeholder="Global Search..." aria-label="Search">
+                  </br>
+               </form>
+               <table class="table table-hover table-dark">
+                  <thead>
+                     <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                     </tr>
+                  </thead>
+                  <tbody id="allcontacts">
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-6 text-left" id="detailsdiv">
+         <h1>Contact Information <img src="images/contact_card.png" class="img-circle" alt="contact img" width="70" height="70"/></th> </h1>
+         <table class="table table-hover table-dark">
+            <thead>
+               <tr>
+                  <th scope="col">Contact Details</th>
+               </tr>
+            </thead>
+            <tbody id="printall">
+			
+    <tr id="printname">
+			   </tr>
+               <tr>
+                  <th>Number</th>
+                  <td id="printnumber">
+                  </td>
+               </tr>
+               <tr>
+                  <th>Address</th>
+                  <td id="printaddress">
+                  </td>
+               </tr>
+               <tr>
+                  <th>Important Dates</th>
+                  <td id="printdate">
+                  </td>
+               </tr>
+               <tr id="editbutton">
+               </tr>
+               <tr id="add_address">
+               </tr>
+               <tr id="add_number">
+               </tr>
+               <tr id="add_imp_dates">
+               </tr>
+               <tr id="add_update">
+               </tr>
+               <tr id="delete">
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </body>
+</html>
